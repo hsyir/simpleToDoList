@@ -2,9 +2,22 @@
 
 require("./functions.php");
 
-pageHeader("صفحه اصلی");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "todo";
 
-//require("./pageTitle.php");
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+// if (!$conn) {
+if ($conn==false) {
+    die(" ---------- Connection failed: " . mysqli_connect_error());
+}
+
+
+pageHeader("صفحه اصلی");
 
 ?>
 
@@ -24,21 +37,37 @@ pageHeader("صفحه اصلی");
     <div class="row">
         <div class="col-md-6">
             <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+<?php
+
+
+$sql = "SELECT * FROM `list` order by `id`";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  
+    // output data of each row
+    while ($row = mysqli_fetch_assoc($result)) {
+
+       // $secondary = $row["done"] ? "list-group-item-secondary" : "";
+         
+        // if ($row['done']) {
+        if ($row['done']==true) {
+            $secondary  = "list-group-item-secondary";
+        } else {
+            $secondary ="";
+        }
+         
+        echo "<li class='list-group-item ".$secondary."'>".$row['title']."</li>";
+    }
+} else {
+    echo "<li class='list-group-item list-group-item-warning'>هیچ تسکی اضافه نشده است</li>";
+}
+
+?>
             </ul>
         </div>
     </div>
 </div>
-
-
-
-
-
-
 
 <?php
 
