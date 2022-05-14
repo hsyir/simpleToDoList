@@ -1,5 +1,8 @@
 <?php
 
+require("./db.php");
+
+
 /**
  * echo hi to persons
  *
@@ -19,4 +22,16 @@ function pageHeader($pageTitle)
 function pageFooter()
 {
     require("./footer.php");
+}
+
+function dd($var){
+    var_dump($var);
+    exit;
+}
+
+
+
+function redirect($url){
+    header("Location: $url");
+    exit();
 }
