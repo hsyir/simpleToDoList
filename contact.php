@@ -1,11 +1,11 @@
 <?php
 
-require("./functions.php");
+require("./services/loader.php");
 pageHeader("تماس با ما");
 
 echo "تماس با ما";
 echo "<br>";
 
-sayHello("حیدر");
+done();
 
 pageFooter();
