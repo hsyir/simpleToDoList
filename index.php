@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< Updated upstream
-require("./functions.php");
-=======
 require("./services/loader.php");
-loadModel("user");
+loadModel("list");
 
 $validActions = ['done','delete','insert'];
 if(isset($_POST["action"]) and in_array($_POST["action"],$validActions) )
@@ -12,17 +9,10 @@ if(isset($_POST["action"]) and in_array($_POST["action"],$validActions) )
     call_user_func($_POST["action"]);
     redirect("/index.php");
 }
->>>>>>> Stashed changes
 
 pageHeader("صفحه اصلی");
 
-//require("./pageTitle.php");
-
-<<<<<<< Updated upstream
-
-echo "سلام به همه .. صفحه ایندکس " ;
-echo "<br>";
-=======
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -86,9 +76,5 @@ if (mysqli_num_rows($todoList) > 0) {
 </script>
 
 <?php
->>>>>>> Stashed changes
-
-sayHello("حسین");
-
 
 pageFooter();
