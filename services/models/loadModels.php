@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . "/BaseModel.php";
+
 function loadModel($modelName)
 {
     $modelFilePath = __DIR__ . "/$modelName.php";

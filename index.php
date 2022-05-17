@@ -1,12 +1,16 @@
 <?php
 
 require("./services/loader.php");
-loadModel("list");
+
+loadModel("List");
+
+
+$todoList = new TodoList;
 
 $validActions = ['done','delete','insert'];
-if(isset($_POST["action"]) and in_array($_POST["action"],$validActions) )
-{
-    call_user_func($_POST["action"]);
+if (isset($_POST["action"]) and in_array($_POST["action"], $validActions)) {
+    $action = $_POST["action"];
+    $todoList->$action();
     redirect("/index.php");
 }
 
@@ -30,7 +34,7 @@ pageHeader("صفحه اصلی");
             <ul class="list-group">
 <?php
 
-$todoList = todoList();
+$todoList = $todoList->getAll();
 if (mysqli_num_rows($todoList) > 0) {
     while ($row = mysqli_fetch_assoc($todoList)) {
         $secondary = $row["done"] ? "list-group-item-secondary" : "";
@@ -65,13 +69,6 @@ if (mysqli_num_rows($todoList) > 0) {
             e.target.parentElement.submit();
         })
     }
-
-/*     let form = document.getElementById("testForm");
-    form.addEventListener("submit",(e)=>{
-        let cn = confirm("AreYouSure?");
-        if(!cn) e.preventDefault();
-    }); */
-
 
 </script>
 
