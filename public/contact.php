@@ -1,6 +1,6 @@
 <?php
 
-require("./services/loader.php");
+require("../loader.php");
 
 loadModel("Message");
 
@@ -11,10 +11,7 @@ if(isset($_POST["action"]) and $_POST["action"]=="insert" )
     $message->insert();
     redirect("/contact.php");
 }
-
 $messages = $message->getAll();
-
-
 pageHeader("تماس با ما");
 ?>
     <form action="/contact.php" method="post">
@@ -25,7 +22,7 @@ pageHeader("تماس با ما");
         <br>
         <button type="submit">ارسال</button>
     </form>
-
+    
 <table border="1" width="100%">
     <thead>
         <tr>
@@ -45,11 +42,6 @@ pageHeader("تماس با ما");
 
 
 <?php
-
-
-
-
-
 
 
 pageFooter();

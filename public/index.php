@@ -1,9 +1,11 @@
 <?php
 
-require("./services/loader.php");
+require("../loader.php");
+
+
+
 
 loadModel("List");
-
 
 $todoList = new TodoList;
 
@@ -14,7 +16,7 @@ if (isset($_POST["action"]) and in_array($_POST["action"], $validActions)) {
     redirect("/index.php");
 }
 
-pageHeader("صفحه اصلی");
+Layout::pageHeader("صفحه اصلی");
 
 ?>
 <div class="container">
@@ -74,4 +76,4 @@ if (mysqli_num_rows($todoList) > 0) {
 
 <?php
 
-pageFooter();
+Layout::pageFooter();
