@@ -21,6 +21,25 @@
     <li class="nav-item">
         <a class="nav-link" href="/contact.php">تماس با ما</a>
     </li>
+    <?php
+        if ($userData = Auth::user()) {
+            ?>
+    <li class="nav-item">
+        <?php echo $userData["username"] ?>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/logout.php">خروج</a>
+    </li>
+    <?php
+        } else {
+            ?>
+            
+    <li class="nav-item">
+        <a class="nav-link" href="/login.php">ورود</a>
+    </li>
+            <?php
+        }
+    ?>
     </ul>
 
 <?php

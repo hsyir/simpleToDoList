@@ -1,11 +1,10 @@
 <?php
 
-require("./functions.php");
+require("../loader.php");
 pageHeader("درباره ما");
 
 echo "درباره ما ...";
 echo "<br>";
 
-sayHello("علی");
 
 pageFooter();
