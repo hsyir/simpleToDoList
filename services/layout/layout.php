@@ -1,5 +1,6 @@
 <?php
 
+namespace Services\Layout;
 class Layout
 {
     public static function pageHeader($pageTitle)

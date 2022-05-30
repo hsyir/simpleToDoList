@@ -1,3 +1,6 @@
+<?php
+use Services\Auth\Auth;
+?>
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 <head>

@@ -1,5 +1,6 @@
 <?php
 
+namespace Services\Models;
 class TodoList extends BaseModel
 {
     public function done()

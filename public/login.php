@@ -1,8 +1,11 @@
 <?php
 
+use Services\Auth\Auth;
+use Services\Layout\Layout;
+use Services\Models\User;
+
 require("../loader.php");
 
-loadModel("User");
 
 $user = new User;
 
