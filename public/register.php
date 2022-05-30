@@ -1,8 +1,10 @@
 <?php
 
-require("../loader.php");
+use Services\Layout\Layout;
+use Services\Models\User;
+use Services\Validation\Valid;
 
-loadModel("User");
+require("../loader.php");
 
 $user = new User;
 $valid = new Valid;

@@ -1,11 +1,12 @@
 <?php
 
+use Services\Layout\Layout;
+use Services\Models\TodoList;
+use Services\Models\User;
+
 require("../loader.php");
 
-
-
-
-loadModel("List");
+$user = new User();
 
 $todoList = new TodoList;
 
@@ -77,3 +78,5 @@ if (mysqli_num_rows($todoList) > 0) {
 <?php
 
 Layout::pageFooter();
+
+

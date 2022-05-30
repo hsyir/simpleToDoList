@@ -1,5 +1,6 @@
 <?php
 
+namespace Services\Models;
 class User extends BaseModel
 {
     public $username = "";

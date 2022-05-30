@@ -1,5 +1,6 @@
 <?php
 
+namespace Services\Models;
 class Message extends BaseModel{
 
     public function insert(){

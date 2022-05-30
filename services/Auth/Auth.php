@@ -1,5 +1,8 @@
 <?php
 
+namespace Services\Auth;
+
+use Services\Models\User;
 
 class Auth
 {
@@ -14,7 +17,6 @@ class Auth
 
     public static function user()
     {
-        loadModel("User");
         if (!isset($_COOKIE["user_token"])) {
             return null;
         }
