@@ -22,6 +22,7 @@
         <a class="nav-link" href="/contact.php">تماس با ما</a>
     </li>
     <?php
+    
         if ($userData = Auth::user()) {
             ?>
     <li class="nav-item">
@@ -36,6 +37,9 @@
             
     <li class="nav-item">
         <a class="nav-link" href="/login.php">ورود</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/register.php">ایجاد کاربر</a>
     </li>
             <?php
         }

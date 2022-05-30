@@ -7,12 +7,12 @@ class User extends BaseModel
     public $password = "";
     public $remember_token = "";
 
-    public function create()
+    public function create($name,$username,$password)
     {
         // TODO: Validation
         $sql =
             "INSERT INTO `users` (`name`, `username`, `password`) "
-            ."VALUES ('$this->name','$this->username','$this->password');";
+            ."VALUES ('$name','$username','$password');";
             
         $result = mysqli_query($this->dbCon, $sql);
         return $result;
@@ -30,12 +30,21 @@ class User extends BaseModel
     {
         $sql = "UPDATE `users` set `remember_token` = '$token' where `id` = $userId";
         $result = mysqli_query($this->dbCon, $sql);
+        
     }
 
     public function getUserByToken($token)
     {
         $sql =
             "SELECT * FROM `users` where `remember_token`='$token' limit 0,1;";
+        $result = mysqli_query($this->dbCon, $sql);
+        return mysqli_fetch_assoc($result);
+    }
+
+    public function getUserByusername ($username)
+    {
+        $sql =
+            "SELECT * FROM `users` where `username`='$username';";
         $result = mysqli_query($this->dbCon, $sql);
         return mysqli_fetch_assoc($result);
     }
