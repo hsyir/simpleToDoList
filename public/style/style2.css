@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Vazir.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Vazir.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Vazir.ttf')  format('truetype'), /* Safari, Android, iOS */
+  }
+  
+  /* Reset */
+  * {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    letter-spacing: 4;
+  }
+  body{
+    font-family: 'Vazir', Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+    /* background: linear-gradient(to bottom right,#333333,#121212); */
+  }
+.main{
+    height: 100vh;
+}
+.cont{
+    background-color: #ffffff10;
+    backdrop-filter: blur(62px);
+    -webkit-backdrop-filter: blur(602px);
+}
+.rower{
+    position: relative;
+}
+
+.positioner{
+    position: absolute;
+   
+    left: 2px;
+    top: 0px;
+}
+.label {
+    inline-size: 300px;
+    overflow-wrap: break-word;
+}
+
+.sshadow-good{
+    box-shadow: 0px 5px 12px 10px rgba(163, 160, 160, 0.507);
+    transform: rotate3d(0, 0, 0, 0deg);
+    transform: perspective(1500px) rotateY(15deg);
+    border-radius: 1rem;
+    transition: transform 1s ease 0s;
+}
+.sshadow-good input:focus{
+    background: rgb(253, 252, 165);
+}
+.sshadow-good input:focus::placeholder{
+    color: darkcyan;
+}
+.sshadow-good:hover{
+    transform: perspective(3000px) rotateY(5deg);
+}
+a{
+    font-family: "Vazir";
+}
