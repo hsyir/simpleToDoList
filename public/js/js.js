@@ -1,11 +1,16 @@
 
-document.querySelectorAll(".text-input").forEach((element)=>{
-    element.addEventListener("blur",(event)=>{
-        if(event.target.value!=""){
-            event.target.nextElementSibling.classList.add("filled");
-        }
-        else{
-            event.target.nextElementSibling.classList.remove("filled");
-        }
-    })
-})
+
+function check_password(str,str2){
+    let alert_password = document.getElementById(str2);
+let a = document.getElementById(str);
+    if(a.validity.patternMismatch){
+        alert_password.classList.remove("d-none");
+        alert_password.classList.add("d-block");
+    }
+    else{
+        alert_password.classList.remove("d-block");
+        alert_password.classList.add("d-none");
+    }
+   
+}
+
