@@ -1,33 +1,27 @@
 <?php
-
 namespace Services\Auth;
 
 use Services\Models\User;
 
-class Auth
-{
-    public static function login($userId)
-    {
-        $token = random_int(10000000000, 99999999999999);
-        $user = new User;
-        $user->updateToken($userId, $token);
-        setcookie("user_token", $token);
-        return $token;
-    }
+class Auth {
 
+    public static function login($id)
+    {
+        $token = random_int(1000000,9000000);
+        $user = new User();
+        $user -> update_token($id,$token);
+        setcookie("login_user",$token);
+    }
     public static function user()
     {
-        if (!isset($_COOKIE["user_token"])) {
+        if(!isset($_COOKIE['login_user'])){
             return null;
         }
-        $user_token = $_COOKIE["user_token"];
-        $user= new User;
-        $logedInUser = $user->getUserByToken($user_token);
-        return $logedInUser;
+        $user =new User;
+        $UserByToken = $user -> GetuserbyToken($_COOKIE['login_user']);
+        return $UserByToken;
     }
-
-    public static function logout()
-    {
-        setcookie("user_token", "");
+    public static function logout(){
+        setcookie("login_user","");
     }
 }

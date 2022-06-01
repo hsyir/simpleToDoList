@@ -1,12 +1,8 @@
 <?php
 
-function dd($var){
-    var_dump($var);
+function redirect($url){
+    header("Location:  $url");
     exit;
 }
 
-function redirect($url){
-    header("Location: $url");
-    exit();
-}
 

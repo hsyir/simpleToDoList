@@ -1,16 +1,15 @@
 <?php 
-
 namespace Services\Models;
-
 use Services\Db\DbConnection;
 
-class BaseModel{
+class BaseModel {
 
-    protected $dbCon;
+    protected $dbcon;
 
     public function __construct()
     {
-        $dbConnection = new DbConnection;
-        $this->dbCon = $dbConnection->connect();    
+        $dbconnection = new DbConnection;
+        $this->dbcon = $dbconnection ->connect();
     }
+
 }
