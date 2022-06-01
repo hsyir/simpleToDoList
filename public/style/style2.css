@@ -18,7 +18,7 @@
     font-family: 'Vazir', Arial, Helvetica, sans-serif;
     line-height: 1.4;
     scroll-behavior: smooth;
-    /* background: linear-gradient(to bottom right,#333333,#121212); */
+  background: linear-gradient(to bottom right,#333333,#121212); 
   }
 .main{
     height: 100vh;
