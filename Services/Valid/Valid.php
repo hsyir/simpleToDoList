@@ -6,6 +6,7 @@ class Valid {
 
     private $pass1,$pass2,$username;
     private $error;
+    
     public function check_signup($pass1,$pass2,$username)
     {
         $this->pass1 = $pass1;
