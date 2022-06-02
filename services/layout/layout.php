@@ -1,14 +1,13 @@
 <?php
 namespace Services\Layout;
 
-class Layout {
-   public static function pageHeader($pageTitle)
+use Jenssegers\Blade\Blade;
+
+class Layout
+{
+    public static function render($view, $parameters)
     {
-        require(__DIR__."/header.php");
-    }
-    
-   public static function pageFooter()
-    {
-        require(__DIR__."/footer.php");
+        $blade = new Blade(__DIR__ . '/../../views', __DIR__ . '/../../cache');
+        echo $blade->make($view, $parameters)->render();
     }
 }

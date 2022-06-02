@@ -1,0 +1,21 @@
+{
+    "name": "sazimo/simple-to-do-list",
+    "authors": [
+        {
+            "name": "Hossein Yaghmaee",
+            "email": "hosseinyaghmaee@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.23",
+        "jenssegers/blade": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Services\\": "Services/"
+        },
+        "files": [
+            "functions.php"
+        ]
+    }
+}

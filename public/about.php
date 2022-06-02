@@ -1,6 +1,7 @@
 <?php
 
 require("../loader.php");
+
 use Services\Layout\Layout;
 
 layout::pageHeader("درباره ما");
