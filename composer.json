@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Services\\": "Services/"
+            "Services\\": "app/"
         },
         "files": [
             "functions.php"
