@@ -1,10 +1,12 @@
 <?php
 
 require("../loader.php");
-pageHeader("درباره ما");
+
+use Services\Layout\Layout;
+
+layout::pageHeader("درباره ما");
 
 echo "درباره ما ...";
 echo "<br>";
 
-
-pageFooter();
+layout::pageFooter();

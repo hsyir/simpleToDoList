@@ -2,33 +2,21 @@
 
 require("../loader.php");
 
-loadModel("User");
+use Services\Layout\Layout;
+use Services\Auth\Auth;
+use Services\Models\User;
 
-$user = new User;
+$user = new User();
+$errorLog = "";
 
-if (isset($_POST["action"]) and $_POST["action"]=="login") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $userData = $user->check($username, $password);
-    if($userData){
-        $token = Auth::login($userData["id"]);
-        redirect("/index.php");
-    }
-    else{
-        echo "No .. ";
+if (isset($_POST['action']) and $_POST['action'] == "login") {
+    $userdata = $user->login($_POST['username'], $_POST['password']);
+    if ($userdata) {
+        Auth::login($userdata['id']);
+        redirect("./index.php");
+    } else {
+        $errorLog = "کاربری با این مشخصات یافت نشد!";
     }
 }
-Layout::pageHeader("ورود");
-?>
 
-<form action="/login.php" method="post">
-    <input type="hidden" name="action" value="login">
-    
-    نام کاربری: <input type="text" name="username" >
-    <br>
-    <br>
-    رمز عبور: <input type="password" name="password">
-    <br>
-    <br>
-    <button>ورود</button>
-</form>
+Layout::render("login", ["errorLog"=>$errorLog]);

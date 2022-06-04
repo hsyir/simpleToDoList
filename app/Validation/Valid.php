@@ -1,5 +1,9 @@
 <?php
 
+namespace Services\Validation;
+
+use Services\Models\User;
+
 class Valid {
 
     public function pass_validation($pass1,$pass2){
@@ -11,7 +15,6 @@ class Valid {
 
     public function user_validation($username)
     {
-        loadModel("User");
         $user= new User;
         
         $InUser = $user->getUserByusername($username);
