@@ -1,17 +1,25 @@
 <?php
 
-require("../loader.php");
+require ("../vendor/autoload.php");
 
-use Services\Models\ToDoList;
-use Services\Layout\Layout;
+$route = $_SERVER["REQUEST_URI"];
 
-$todolist = new ToDoList;
-$actions = ['insert','delete','done'];
-if(isset($_POST['action']) and in_array($_POST['action'],$actions)){
-    $action = $_POST['action'];
-    $todolist -> $action();
-    redirect('./index.php');
+$routes = require("../routes/routes.php");
+
+if (isset($routes[$route])) {
+    
+    $act = $routes[$route];
+    $act = explode("@",$act);
+    
+    $controllerName = "\\Services\\Controllers\\$act[0]";
+    $action = $act[1];
+    
+    $controller = new $controllerName;
+    $controller->$action();
+
+    exit;
 }
-$todoList =$todolist->SelectFromDataBase();
-//if (mysqli_num_rows($result) > 0)
-Layout::render("index",["todoList"=>$todoList]);
+
+http_response_code(404);
+require "404.php";
+exit;

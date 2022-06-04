@@ -30,10 +30,10 @@ use Services\Auth\Auth;
                             <a class="nav-link active" aria-current="page" href="index.php">خانه</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.php">درباره ما</a>
+                            <a class="nav-link" href="/about">درباره ما</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link href=" contact.php">ارتباط با ما</a>
+                            <a class="nav-link" href="/contact">ارتباط با ما</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
