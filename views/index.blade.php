@@ -4,7 +4,7 @@
 <div class="container mt-1 border rounded bg-dark text-info  d-flex flex-column  pt-2 cont">
     <div class="row  d-flex flex-column jusitify-content-center align-items-center m-2">
         <div class="col-md-6">
-            <form method="POST" id="form">
+            <form method="POST" id="form" action="/storeNewTodoItem">
                 <div class="input-group mb-3">
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon1" name="action" value='insert'>اضافه کردن</button>
                     <input type="text" class="form-control" name="task" placeholder="عنوان وظیفه / تسک" aria-label="Example text with button addon" aria-describedby="button-addon1">
@@ -20,7 +20,7 @@
                     $secondary = $row['done'] ? "'flexSwitchCheckChecked'  checked " : "flexSwitchCheckDefault";
                     @endphp
                     <div class='form-check form-switch  rounded  border-bottom border-warning pt-1 pb-1 mb-1 rower'>
-                        <form method='post'>
+                        <form method='post' >
                             <input type='hidden' name='action' value='done' />
                             <input type='hidden' name='id' class='hid1' value="{{ $row['id'] }}"  />
                             <label class='form-check-label label' for='flexSwitchCheckChecked'>{{ $row['title'] }} </label>
