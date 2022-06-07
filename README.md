@@ -19,6 +19,8 @@
 |[جلسه هفتم](https://github.com/hsyir/simpleToDoList/tree/07)|
 |[جلسه هشتم](https://github.com/hsyir/simpleToDoList/tree/08)|
 |[جلسه نهم](https://github.com/hsyir/simpleToDoList/tree/09)|
+  |[جلسه دهم](https://github.com/hsyir/simpleToDoList/tree/10)|
+  |[جلسه یازدهم](https://github.com/hsyir/simpleToDoList/tree/11)|
 
   
   
