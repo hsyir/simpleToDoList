@@ -6,5 +6,6 @@ return [
     "/about" =>"AboutController@about",
     "/signup"=>"SignupController@signup",
     "/login" => "LoginController@login",
-    "/logout"=>"HomeController@logout"
+    "/logout"=>"HomeController@logout",
+    "/convertToexcel"=>"ExcelController@convertToexcel"
 ];
