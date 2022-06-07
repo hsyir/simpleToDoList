@@ -18,7 +18,7 @@
     font-family: 'Vazir', Arial, Helvetica, sans-serif;
     line-height: 1.4;
     scroll-behavior: smooth;
-  background: linear-gradient(to bottom right,#333333,#121212); 
+    background: linear-gradient(to bottom right,#333333,#121212);
   }
 .main{
     height: 100vh;
@@ -61,4 +61,60 @@
 }
 a{
     font-family: "Vazir";
+}
+
+.about{
+    height: 94.3%;
+    width: 100%;
+  background: url("../img/pic.jpg") ;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 50px;
+  z-index: -1;
+  filter: blur(5px);
+}
+#buttons{
+    margin-top: 50px;
+  
+    width: auto;
+    height: auto;
+}
+.buttons span{
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: white;
+    outline: 2px solid whitesmoke;
+    text-align: center;
+    font-weight: bolder;
+    position: relative;
+    overflow: hidden;
+    padding: 20px 20px;
+    border: 1px solid rgb(120, 111, 129);
+    font-style: oblique;
+    transition: color 800ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.buttons span:hover{
+    color: darkgray;
+}
+.buttons span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 0;
+    height: 100%;
+    background-color: rgba(153, 170, 58, 0.767);
+    transform: skew(0deg);
+    z-index: -1;
+    transition: width 1s;
+}
+.buttons span:hover::before{
+    width: 100%;
+}
+.buttons span a{
+    text-decoration: none;
+    color: aliceblue;
 }

@@ -1,0 +1,23 @@
+{
+    "name": "hoseinalizadeh1373/todolist1",
+    "description": "todolist",
+    "type": "project",
+    "require": {
+        "jenssegers/blade": "^1.4",
+        "phpoffice/phpspreadsheet": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "Services\\": "app/"
+        }
+        ,
+        "files": [
+            "functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "hosein"
+        }
+    ]
+}

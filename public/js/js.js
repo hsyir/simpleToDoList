@@ -11,6 +11,8 @@ let a = document.getElementById(str);
         alert_password.classList.remove("d-block");
         alert_password.classList.add("d-none");
     }
-   
 }
+window.addEventListener("load",()=>{
+
+});
 
