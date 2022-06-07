@@ -14,3 +14,4 @@ let a = document.getElementById(str);
    
 }
 
+alert("asd");

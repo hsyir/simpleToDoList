@@ -27,7 +27,7 @@ use Services\Auth\Auth;
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">خانه</a>
+                            <a class="nav-link active" aria-current="page" href="/">خانه</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/about">درباره ما</a>
@@ -51,9 +51,9 @@ use Services\Auth\Auth;
                         if ($UserData = Auth::user()) {
                             
 
-                            echo "<a class='btn btn-outline-dark' href='logout.php'>خروج  ". $UserData['username']."</a>";
+                            echo "<a class='btn btn-outline-dark' href='/logout'>خروج  ". $UserData['username']."</a>";
                         } else {
-                            echo "<a class='btn btn-outline-dark' href='login.php'>ورود</a>";
+                            echo "<a class='btn btn-outline-dark' href='/login'>ورود</a>";
                         }
                         ?>
                         
@@ -69,15 +69,7 @@ use Services\Auth\Auth;
                 </div>
             </div>
         </div>
- 
-
-
-
-      
         <hr>
-
-
-        
 </div>
 
 <hr>
