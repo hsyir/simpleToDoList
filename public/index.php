@@ -1,25 +1,11 @@
 <?php
 
-require ("../vendor/autoload.php");
+require("../vendor/autoload.php");
 
-$route = $_SERVER["REQUEST_URI"];
+// Create Router instance
+$router = new \Bramus\Router\Router();
 
-$routes = require("../routes/routes.php");
+require "../routes/web.php";
 
-if (isset($routes[$route])) {
-    
-    $act = $routes[$route];
-    $act = explode("@",$act);
-    
-    $controllerName = "\\Services\\Controllers\\$act[0]";
-    $action = $act[1];
-    
-    $controller = new $controllerName;
-    $controller->$action();
-
-    exit;
-}
-
-http_response_code(404);
-require "404.php";
-exit;
+// Run it!
+$router->run();

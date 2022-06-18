@@ -16,7 +16,7 @@ class Valid {
     public function user_validation($username)
     {
         $user= new User;
-        
+            return false;
         $InUser = $user->getUserByusername($username);
         return $InUser;
     }
