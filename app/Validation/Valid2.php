@@ -1,8 +1,8 @@
 <?php
-namespace Services\Valid;
+namespace Services\Validation;
 use Services\Models\User;
 
-class Valid {
+class Valid2 {
 
     private $pass1,$pass2,$username;
     private $error;
@@ -17,10 +17,18 @@ class Valid {
         return $this->error;
         
     }
+
+    public function empetycheck()
+    {
+        if($this->pass1 !=$this->pass2){
+            $this->error = "رمزهایی عبور یکسان نیستن!";
+        }    
+    }
+
     public function repassword()
     {
         if($this->pass1 !=$this->pass2){
-            $this->error .= " پسورد ها یکسان نیستن!";
+            $this->error = " پسورد ها یکسان نیستن!";
         }    
     }
 
@@ -30,7 +38,7 @@ class Valid {
         $user_in_use = new User();
         $res = $user_in_use->checkifExists($this->username);
         if($res>0){
-            $this->error .= "<br>"."نام کاربری از قبل موجود است.";
+            $this->error = "نام کاربری از قبل موجود است.";
         }
      }
      

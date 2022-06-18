@@ -10,3 +10,5 @@ $router->post("/doLogin", "AuthController@doLogin");
 $router->get("/logout", "AuthController@logout");
 $router->get("/register", "AuthController@showRegisterForm");
 $router->post("/doRegister", "AuthController@doRegister");
+$router->post("/dosignup", "AuthController@dosignup");
+$router->get("/contact", "ContactControllers@homecontact");
