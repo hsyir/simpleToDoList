@@ -6,6 +6,7 @@ use Services\Auth\Auth;
 use Services\Layout\Layout;
 use Services\Models\User;
 use Services\Validation\Valid;
+use Services\Validation\Valid2;
 
 class AuthController
 {
@@ -72,5 +73,37 @@ class AuthController
         }
         
         Layout::render("auth.register", ["errorMessage"=>$errorMessage]);
+    }
+
+    public function dosignup()
+    {
+        
+        $donone="d-none";
+
+        $username = $_POST['username'];
+        $password =$_POST['password'];
+        $re_password =$_POST['re-password'];
+        $name = $_POST['name'];
+
+        $valid = new Valid2();
+        $error_log = $valid->check_signup($password,$re_password,$username);
+
+
+        if($error_log==""){
+            $user =new User();
+
+            $user->username = $username;
+            $user->password = $password;
+            $user->name = $name;
+
+            if($Userdata = $user->create()){
+                redirect("/login");
+            }
+        }
+        else{
+            $donone = "d-block";
+        }
+
+        Layout::render("auth.register", ["errorMessage"=>$error_log]);
     }
 }
